@@ -14,7 +14,7 @@ struct GoalsListRowView: View {
     var body: some View {
         HStack(spacing: 0) {
             Image(systemName: goal.isCompleted ? "checkmark.circle" : "circle")
-                .foregroundStyle(goal.isCompleted ? .green : .black)
+                .foregroundStyle(goal.isCompleted ? .green : .red)
                 .padding(.trailing, 10)
             Text(goal.title)
         }

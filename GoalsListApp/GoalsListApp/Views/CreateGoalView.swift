@@ -23,19 +23,19 @@ struct CreateGoalView: View {
             TextField("Type something here...", text: $titleTextFieldText)
                 .padding(.horizontal)
                 .frame(height: 55)
-                .background(Color.yellow)
+                .background(Color(UIColor.secondarySystemBackground))
                 .clipShape(.rect(cornerRadius: 10))
             
             TextField("Type something here...", text: $descriptionTextFieldText)
                 .padding(.horizontal)
                 .frame(height: 55)
-                .background(Color.yellow)
+                .background(Color(UIColor.secondarySystemBackground))
                 .clipShape(.rect(cornerRadius: 10))
             
             TextField("Type something here...", text: $dateTextFieldText)
                 .padding(.horizontal)
                 .frame(height: 55)
-                .background(Color.yellow)
+                .background(Color(UIColor.secondarySystemBackground))
                 .clipShape(.rect(cornerRadius: 10))
             
             Button(action: saveGoal, label: {
@@ -76,6 +76,8 @@ struct CreateGoalView: View {
 }
 
 #Preview {
-    CreateGoalView()
-        .environmentObject(GoalsListViewViewModel())
+    NavigationView {
+        CreateGoalView()
+            .environmentObject(GoalsListViewViewModel())
+    }
 }

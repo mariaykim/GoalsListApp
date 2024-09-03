@@ -39,6 +39,7 @@ struct GoalsListView: View {
         .toolbar {
             NavigationLink("New Goal", destination: CreateGoalView())
         }
+        .toolbar(viewModel.goals.isEmpty ? .hidden : .visible, for: .navigationBar)
     }
 }
 

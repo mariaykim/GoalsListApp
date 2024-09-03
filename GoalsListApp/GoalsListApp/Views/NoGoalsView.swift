@@ -12,11 +12,11 @@ struct NoGoalsView: View {
     @State var animate: Bool = false
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 5) {
-                Image(systemName: "house")
-                Text("No goals")
-                    .font(.title)
+            VStack(spacing: 10) {
+                Text("🫢")
+                    .font(.system(size: 60))
+                Text("There are no goals!")
+                    .font(.largeTitle)
                 Text("Click the button below to create your first goal!!!")
                     .multilineTextAlignment(.center)
                 NavigationLink(
@@ -31,11 +31,11 @@ struct NoGoalsView: View {
                             .clipShape(.rect(cornerRadius: 10))
                 })
             }
+            .frame(maxWidth: 400)
             .padding(.horizontal)
             .onAppear {
                 addAnimation()
             }
-        }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
@@ -51,7 +51,7 @@ struct NoGoalsView: View {
 
 #Preview {
     NavigationView {
-        NoGoalsView()
+        GoalsListView()
+            .environmentObject(GoalsListViewViewModel())
     }
-    .navigationTitle("Title")
 }
