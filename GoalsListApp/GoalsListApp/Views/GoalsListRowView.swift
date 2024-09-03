@@ -12,13 +12,13 @@ struct GoalsListRowView: View {
     let goal: GoalModel
     
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             Image(systemName: goal.isCompleted ? "checkmark.circle" : "circle")
                 .foregroundStyle(goal.isCompleted ? .green : .black)
+                .padding(.trailing, 10)
             Text(goal.title)
         }
         .font(.headline)
-        .padding(.horizontal)
     }
 }
 

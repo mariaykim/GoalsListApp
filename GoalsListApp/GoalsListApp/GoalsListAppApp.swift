@@ -9,11 +9,15 @@ import SwiftUI
 
 @main
 struct GoalsListAppApp: App {
+    
+    @StateObject var goalsListViewModel: GoalsListViewViewModel = GoalsListViewViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 GoalsListView()
             }
+            .environmentObject(goalsListViewModel)
         }
     }
 }

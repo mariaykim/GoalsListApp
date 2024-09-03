@@ -9,17 +9,20 @@ import SwiftUI
 
 struct GoalsListView: View {
     
-    @State var goals: [GoalModel] = [
-        .init(title: "This is the first", isCompleted: true),
-        .init(title: "This is the second", isCompleted: true),
-        .init(title: "This is the third", isCompleted: false)
-    ]
+    @EnvironmentObject var viewModel: GoalsListViewViewModel
     
     var body: some View {
         List {
-            ForEach(goals, id: \.self) { goal in
+            ForEach(viewModel.goals, id: \.self) { goal in
                 GoalsListRowView(goal: goal)
+                    .onTapGesture {
+                        withAnimation(.linear) {
+                            viewModel.markGoalCompleted(goal: goal)
+                        }
+                    }
             }
+            .onDelete(perform: viewModel.deleteGoal)
+            .onMove(perform: viewModel.moveGoal)
         }
         .listStyle(.plain)
         .navigationTitle("Goals")
@@ -37,4 +40,5 @@ struct GoalsListView: View {
     NavigationView {
         GoalsListView()
     }
+    .environmentObject(GoalsListViewViewModel())
 }
