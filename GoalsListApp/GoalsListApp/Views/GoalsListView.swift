@@ -12,19 +12,26 @@ struct GoalsListView: View {
     @EnvironmentObject var viewModel: GoalsListViewViewModel
     
     var body: some View {
-        List {
-            ForEach(viewModel.goals, id: \.self) { goal in
-                GoalsListRowView(goal: goal)
-                    .onTapGesture {
-                        withAnimation(.linear) {
-                            viewModel.markGoalCompleted(goal: goal)
-                        }
+        ZStack {
+            if viewModel.goals.isEmpty {
+                NoGoalsView()
+//                    .transition(AnyTransition.opacity.animation(.easeIn))
+            } else {
+                List {
+                    ForEach(viewModel.goals, id: \.self) { goal in
+                        GoalsListRowView(goal: goal)
+                            .onTapGesture {
+                                withAnimation(.linear) {
+                                    viewModel.markGoalCompleted(goal: goal)
+                                }
+                            }
                     }
+                    .onDelete(perform: viewModel.deleteGoal)
+                    .onMove(perform: viewModel.moveGoal)
+                }
+                .listStyle(.plain)
             }
-            .onDelete(perform: viewModel.deleteGoal)
-            .onMove(perform: viewModel.moveGoal)
         }
-        .listStyle(.plain)
         .navigationTitle("Goals")
         .toolbar {
             EditButton()
@@ -32,7 +39,6 @@ struct GoalsListView: View {
         .toolbar {
             NavigationLink("New Goal", destination: CreateGoalView())
         }
-        
     }
 }
 
