@@ -11,14 +11,28 @@ struct CreateGoalView: View {
     
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: GoalsListViewViewModel
-    @State var textFieldText: String = ""
+    @State var titleTextFieldText: String = ""
+    @State var descriptionTextFieldText: String = ""
+    @State var dateTextFieldText: String = ""
     
     @State var alertTitle: String = ""
     @State var showAlert: Bool = false
     
     var body: some View {
         ScrollView {
-            TextField("Type something here...", text: $textFieldText)
+            TextField("Type something here...", text: $titleTextFieldText)
+                .padding(.horizontal)
+                .frame(height: 55)
+                .background(Color.yellow)
+                .clipShape(.rect(cornerRadius: 10))
+            
+            TextField("Type something here...", text: $descriptionTextFieldText)
+                .padding(.horizontal)
+                .frame(height: 55)
+                .background(Color.yellow)
+                .clipShape(.rect(cornerRadius: 10))
+            
+            TextField("Type something here...", text: $dateTextFieldText)
                 .padding(.horizontal)
                 .frame(height: 55)
                 .background(Color.yellow)
@@ -43,7 +57,7 @@ struct CreateGoalView: View {
     
     func saveGoal() {
         if goalValid() {
-            viewModel.addGoal(title: textFieldText)
+            viewModel.addGoal(title: titleTextFieldText, description: descriptionTextFieldText, date: dateTextFieldText)
             alertTitle = "SUCCESS"
             showAlert.toggle()
             dismiss()
@@ -51,7 +65,7 @@ struct CreateGoalView: View {
     }
     
     func goalValid() -> Bool {
-        if textFieldText.count < 3 {
+        if titleTextFieldText.count < 3 {
             alertTitle = "Goal needs to be three characters long"
             showAlert.toggle()
             return false
