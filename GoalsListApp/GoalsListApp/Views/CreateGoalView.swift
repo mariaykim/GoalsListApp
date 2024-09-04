@@ -20,19 +20,19 @@ struct CreateGoalView: View {
     
     var body: some View {
         ScrollView {
-            TextField("Type something here...", text: $titleTextFieldText)
+            TextField("Goal Title...", text: $titleTextFieldText)
                 .padding(.horizontal)
                 .frame(height: 55)
                 .background(Color(UIColor.secondarySystemBackground))
                 .clipShape(.rect(cornerRadius: 10))
             
-            TextField("Type something here...", text: $descriptionTextFieldText)
+            TextField("Goal Description...", text: $descriptionTextFieldText)
                 .padding(.horizontal)
                 .frame(height: 55)
                 .background(Color(UIColor.secondarySystemBackground))
                 .clipShape(.rect(cornerRadius: 10))
             
-            TextField("Type something here...", text: $dateTextFieldText)
+            TextField("Goal Date...", text: $dateTextFieldText)
                 .padding(.horizontal)
                 .frame(height: 55)
                 .background(Color(UIColor.secondarySystemBackground))
