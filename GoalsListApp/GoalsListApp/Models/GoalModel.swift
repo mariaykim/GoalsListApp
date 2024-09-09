@@ -16,9 +16,9 @@ struct GoalModel: Identifiable, Hashable, Codable {
     
     init(id: String = UUID().uuidString,
          title: String,
-         description: String,
-         date: String,
-         isCompleted: Bool
+         description: String = "",
+         date: String = "",
+         isCompleted: Bool = false
     ) {
         self.id = id
         self.title = title

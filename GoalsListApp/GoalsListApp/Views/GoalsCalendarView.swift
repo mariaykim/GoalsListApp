@@ -11,6 +11,7 @@ import SwiftUI
 struct GoalsCalendarView: View {
     
     @State var selectedDate: Date?
+    var dayGoals: [GoalModel] = [.init(title: "testing1"), .init(title: "testing2"), .init(title: "testing3")]
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -57,9 +58,30 @@ struct GoalsCalendarView: View {
     
     var dayGoalsView: some View {
         ScrollView {
-            Text(selectedDate?.description ?? "NOW")
-                .font(.title)
+            VStack {
+                Text(selectedDate?.description ?? "No goals to display")
+                    .font(.title)
+                ForEach(dayGoals, id: \.self) { goal in
+                    dayGoalsRowView(title: "Testing")
+                }
+            }
         }
+        .padding(.all, 20)
+    }
+    
+    @ViewBuilder
+    func dayGoalsRowView(title: String) -> some View {
+        HStack(spacing: 0) {
+            Rectangle()
+                .background(Color.blue)
+                .frame(maxWidth: 15)
+                .padding(.trailing, 10)
+            Text(title)
+            Spacer()
+        }
+        .padding(.all, 10)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .border(Color.black)
     }
 }
 

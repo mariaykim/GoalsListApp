@@ -28,9 +28,8 @@ struct GoalsListAppApp: App {
                             Label("Calendar", systemImage: "calendar")
                         }
                 }
-                .toolbarBackground(.blue.opacity(0.1), for: .tabBar)
                 .toolbarBackground(.visible, for: .tabBar)
-                .toolbarColorScheme(.dark, for: .tabBar)
+                .toolbarBackground(Color.secondaryAccent, for: .tabBar)
             }
             .environmentObject(goalsListViewModel)
             .padding(.horizontal, 20)
