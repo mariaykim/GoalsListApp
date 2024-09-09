@@ -19,6 +19,7 @@
 		3A0BC2182C87C6D500BC2B4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0BC2172C87C6D500BC2B4A /* LaunchScreen.storyboard */; };
 		3A0BC21A2C8F720D00BC2B4A /* GoalDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2192C8F720D00BC2B4A /* GoalDetailsView.swift */; };
 		3A0BC21C2C8F78CD00BC2B4A /* GoalsCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC21B2C8F78CD00BC2B4A /* GoalsCalendarView.swift */; };
+		3A0BC21F2C8F79DF00BC2B4A /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 3A0BC21E2C8F79DF00BC2B4A /* HorizonCalendar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0BC21F2C8F79DF00BC2B4A /* HorizonCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +133,9 @@
 			dependencies = (
 			);
 			name = GoalsListApp;
+			packageProductDependencies = (
+				3A0BC21E2C8F79DF00BC2B4A /* HorizonCalendar */,
+			);
 			productName = GoalsListApp;
 			productReference = 3A0BC1F32C8642E400BC2B4A /* GoalsListApp.app */;
 			productType = "com.apple.product-type.application";
@@ -159,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 3A0BC1EA2C8642E400BC2B4A;
+			packageReferences = (
+				3A0BC21D2C8F79DF00BC2B4A /* XCRemoteSwiftPackageReference "HorizonCalendar" */,
+			);
 			productRefGroup = 3A0BC1F42C8642E400BC2B4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -400,6 +408,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A0BC21D2C8F79DF00BC2B4A /* XCRemoteSwiftPackageReference "HorizonCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/HorizonCalendar.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A0BC21E2C8F79DF00BC2B4A /* HorizonCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A0BC21D2C8F79DF00BC2B4A /* XCRemoteSwiftPackageReference "HorizonCalendar" */;
+			productName = HorizonCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A0BC1EB2C8642E400BC2B4A /* Project object */;
 }

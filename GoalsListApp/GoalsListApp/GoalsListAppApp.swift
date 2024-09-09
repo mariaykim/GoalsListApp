@@ -15,18 +15,23 @@ struct GoalsListAppApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                NavigationView {
-                    GoalsListView()
+                Group {
+                    NavigationView {
+                        GoalsListView()
+                    }
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                    
+                    GoalsCalendarView()
+                        .tabItem {
+                            Label("Calendar", systemImage: "calendar")
+                        }
                 }
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-                
-                GoalsCalendarView()
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
-        }
+                .toolbarBackground(.blue.opacity(0.1), for: .tabBar)
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarColorScheme(.dark, for: .tabBar)
+            }
             .environmentObject(goalsListViewModel)
             .padding(.horizontal, 20)
         }
