@@ -15,7 +15,7 @@ struct GoalsListView: View {
         ZStack {
             if viewModel.goals.isEmpty {
                 NoGoalsView()
-//                    .transition(AnyTransition.opacity.animation(.easeIn))
+                    .transition(AnyTransition.opacity.animation(.easeIn))
             } else {
                 List {
                     ForEach(viewModel.goals, id: \.self) { goal in
