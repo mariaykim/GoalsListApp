@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GoalsListView: View {
     
+    @Environment(\.editMode) var editMode
     @EnvironmentObject var viewModel: GoalsListViewViewModel
     
     var body: some View {
@@ -20,11 +21,6 @@ struct GoalsListView: View {
                 List {
                     ForEach(viewModel.goals, id: \.self) { goal in
                         GoalsListRowView(goal: goal)
-                            .onTapGesture {
-                                withAnimation(.linear) {
-                                    viewModel.markGoalCompleted(goal: goal)
-                                }
-                            }
                     }
                     .onDelete(perform: viewModel.deleteGoal)
                     .onMove(perform: viewModel.moveGoal)
@@ -34,7 +30,9 @@ struct GoalsListView: View {
         }
         .navigationTitle("Goals")
         .toolbar {
-            EditButton()
+            ToolbarItem(placement: .topBarTrailing) {
+                EditButton()
+            }
         }
         .toolbar {
             NavigationLink("New Goal", destination: CreateGoalView())

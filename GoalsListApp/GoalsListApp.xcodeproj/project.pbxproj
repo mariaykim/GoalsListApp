@@ -17,6 +17,7 @@
 		3A0BC2142C8798F700BC2B4A /* GoalsListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2132C8798F700BC2B4A /* GoalsListViewViewModel.swift */; };
 		3A0BC2162C87AEE500BC2B4A /* NoGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2152C87AEE500BC2B4A /* NoGoalsView.swift */; };
 		3A0BC2182C87C6D500BC2B4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0BC2172C87C6D500BC2B4A /* LaunchScreen.storyboard */; };
+		3A0BC21A2C8F720D00BC2B4A /* GoalDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2192C8F720D00BC2B4A /* GoalDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		3A0BC2132C8798F700BC2B4A /* GoalsListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsListViewViewModel.swift; sourceTree = "<group>"; };
 		3A0BC2152C87AEE500BC2B4A /* NoGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoGoalsView.swift; sourceTree = "<group>"; };
 		3A0BC2172C87C6D500BC2B4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A0BC2192C8F720D00BC2B4A /* GoalDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				3A0BC2152C87AEE500BC2B4A /* NoGoalsView.swift */,
 				3A0BC20D2C87956B00BC2B4A /* CreateGoalView.swift */,
 				3A0BC2092C86436400BC2B4A /* GoalsListRowView.swift */,
+				3A0BC2192C8F720D00BC2B4A /* GoalDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				3A0BC2082C86434D00BC2B4A /* GoalsListView.swift in Sources */,
 				3A0BC20E2C87956B00BC2B4A /* CreateGoalView.swift in Sources */,
 				3A0BC2162C87AEE500BC2B4A /* NoGoalsView.swift in Sources */,
+				3A0BC21A2C8F720D00BC2B4A /* GoalDetailsView.swift in Sources */,
 				3A0BC1F72C8642E400BC2B4A /* GoalsListAppApp.swift in Sources */,
 				3A0BC20A2C86436400BC2B4A /* GoalsListRowView.swift in Sources */,
 				3A0BC2102C8796A300BC2B4A /* GoalModel.swift in Sources */,

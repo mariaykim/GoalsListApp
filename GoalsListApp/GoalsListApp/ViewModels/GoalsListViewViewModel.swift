@@ -16,17 +16,11 @@ final class GoalsListViewViewModel: ObservableObject {
     }
     let goalsListKey: String = "goals_list"
     
-    
     init() {
         getGoals()
     }
     
     func getGoals() {
-//        let newGoals = [
-//            GoalModel(title: "This is the first", description: "First description", date: "2025", isCompleted: true),
-//            GoalModel(title: "This is the second", description: "2nd description", date: "2026", isCompleted: true),
-//            GoalModel(title: "This is the third", description: "3rd description", date: "2027", isCompleted: false)
-//        ]
         guard let data = UserDefaults.standard.data(forKey: goalsListKey),
               let savedGoals = try? JSONDecoder().decode([GoalModel].self, from: data)
         else { return }
@@ -48,13 +42,14 @@ final class GoalsListViewViewModel: ObservableObject {
     }
     
     func markGoalCompleted(goal: GoalModel) {
-//        if let index = goals.firstIndex { (existingGoal) -> Bool in
-//            return existingGoal.id == goal.id
-//        } {
-//            // then do this
-//        }
         if let index = goals.firstIndex(where: { $0.id == goal.id }) {
             goals[index] = goal.markAsCompleted()
+        }
+    }
+    
+    func updateGoal(goal: GoalModel) {
+        if let index = goals.firstIndex(where: { $0.id == goal.id }) {
+            goals[index] = goal
         }
     }
     

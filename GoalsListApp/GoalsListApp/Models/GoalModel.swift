@@ -30,4 +30,8 @@ struct GoalModel: Identifiable, Hashable, Codable {
     func markAsCompleted() -> GoalModel {
         return GoalModel(id: id, title: title, description: description, date: date, isCompleted: !isCompleted)
     }
+    
+    func updatedGoal(title: String, description: String, date: String) -> GoalModel {
+        return GoalModel(id: id, title: title, description: description, date: date, isCompleted: isCompleted)
+    }
 }

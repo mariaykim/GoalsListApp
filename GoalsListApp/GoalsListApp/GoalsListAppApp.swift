@@ -18,6 +18,7 @@ struct GoalsListAppApp: App {
                 GoalsListView()
             }
             .environmentObject(goalsListViewModel)
+            .padding(.horizontal, 20)
         }
     }
 }

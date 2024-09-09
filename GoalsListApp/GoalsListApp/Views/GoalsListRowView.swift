@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GoalsListRowView: View {
     
+    @EnvironmentObject var viewModel: GoalsListViewViewModel
     let goal: GoalModel
     
     var body: some View {
@@ -16,7 +17,14 @@ struct GoalsListRowView: View {
             Image(systemName: goal.isCompleted ? "checkmark.circle" : "circle")
                 .foregroundStyle(goal.isCompleted ? .green : .red)
                 .padding(.trailing, 10)
-            Text(goal.title)
+                .onTapGesture {
+                    withAnimation(.linear) {
+                        viewModel.markGoalCompleted(goal: goal)
+                    }
+                }
+            NavigationLink(destination: GoalDetailsView(goal: goal)) {
+                Text(goal.title)
+            }
         }
         .font(.headline)
     }
