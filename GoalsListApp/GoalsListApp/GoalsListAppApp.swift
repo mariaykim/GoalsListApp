@@ -14,9 +14,19 @@ struct GoalsListAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                GoalsListView()
-            }
+            TabView {
+                NavigationView {
+                    GoalsListView()
+                }
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+                
+                GoalsCalendarView()
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
+        }
             .environmentObject(goalsListViewModel)
             .padding(.horizontal, 20)
         }
