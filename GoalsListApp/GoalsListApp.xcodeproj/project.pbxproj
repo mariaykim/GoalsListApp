@@ -22,7 +22,7 @@
 		3A0BC21F2C8F79DF00BC2B4A /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 3A0BC21E2C8F79DF00BC2B4A /* HorizonCalendar */; };
 		3A0BC2212C8FF7D300BC2B4A /* GoalsCalendarSelectedDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2202C8FF7D300BC2B4A /* GoalsCalendarSelectedDayView.swift */; };
 		3A0BC2232C8FF7E200BC2B4A /* GoalsCalendarSelectedDayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2222C8FF7E200BC2B4A /* GoalsCalendarSelectedDayRowView.swift */; };
-		3A0BC2252C9015F500BC2B4A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2242C9015F500BC2B4A /* SettingsView.swift */; };
+		3A0BC2272C90D2A700BC2B4A /* GoalsListDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2262C90D2A700BC2B4A /* GoalsListDatePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		3A0BC21B2C8F78CD00BC2B4A /* GoalsCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCalendarView.swift; sourceTree = "<group>"; };
 		3A0BC2202C8FF7D300BC2B4A /* GoalsCalendarSelectedDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCalendarSelectedDayView.swift; sourceTree = "<group>"; };
 		3A0BC2222C8FF7E200BC2B4A /* GoalsCalendarSelectedDayRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCalendarSelectedDayRowView.swift; sourceTree = "<group>"; };
-		3A0BC2242C9015F500BC2B4A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3A0BC2262C90D2A700BC2B4A /* GoalsListDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsListDatePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +105,7 @@
 				3A0BC21B2C8F78CD00BC2B4A /* GoalsCalendarView.swift */,
 				3A0BC2202C8FF7D300BC2B4A /* GoalsCalendarSelectedDayView.swift */,
 				3A0BC2222C8FF7E200BC2B4A /* GoalsCalendarSelectedDayRowView.swift */,
-				3A0BC2242C9015F500BC2B4A /* SettingsView.swift */,
+				3A0BC2262C90D2A700BC2B4A /* GoalsListDatePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,11 +208,11 @@
 				3A0BC2082C86434D00BC2B4A /* GoalsListView.swift in Sources */,
 				3A0BC2232C8FF7E200BC2B4A /* GoalsCalendarSelectedDayRowView.swift in Sources */,
 				3A0BC20E2C87956B00BC2B4A /* CreateGoalView.swift in Sources */,
+				3A0BC2272C90D2A700BC2B4A /* GoalsListDatePickerView.swift in Sources */,
 				3A0BC2162C87AEE500BC2B4A /* NoGoalsView.swift in Sources */,
 				3A0BC21A2C8F720D00BC2B4A /* GoalDetailsView.swift in Sources */,
 				3A0BC1F72C8642E400BC2B4A /* GoalsListAppApp.swift in Sources */,
 				3A0BC20A2C86436400BC2B4A /* GoalsListRowView.swift in Sources */,
-				3A0BC2252C9015F500BC2B4A /* SettingsView.swift in Sources */,
 				3A0BC21C2C8F78CD00BC2B4A /* GoalsCalendarView.swift in Sources */,
 				3A0BC2102C8796A300BC2B4A /* GoalModel.swift in Sources */,
 			);

@@ -38,8 +38,8 @@ struct GoalsCalendarView: View {
         
         let comp: DateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
         
-        let startDate = calendar.date(from: DateComponents(year: comp.year, month: comp.month, day: 01))!
-        let endDate = calendar.date(from: DateComponents(year: comp.year, month: 12, day: 31))!
+        let startDate = calendar.date(from: DateComponents(year: comp.year, month: comp.month, day: comp.day))!
+        let endDate = calendar.date(byAdding: .year, value: 5, to: startDate)!
         
         return CalendarViewRepresentable(
             calendar: calendar,

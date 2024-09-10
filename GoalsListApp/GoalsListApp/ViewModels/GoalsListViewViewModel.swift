@@ -38,7 +38,7 @@ final class GoalsListViewViewModel: ObservableObject {
         goals.move(fromOffsets: from, toOffset: to)
     }
     
-    func addGoal(title: String, description: String, date: String) {
+    func addGoal(title: String, description: String, date: Date) {
         let newGoal = GoalModel(title: title, description: description, date: date, isCompleted: false)
         goals.append(newGoal)
     }
@@ -63,6 +63,6 @@ final class GoalsListViewViewModel: ObservableObject {
     
     func fetchDayGoals(date: Date?) {
         guard let date else { return }
-        dayGoals = goals.filter({ $0.date == date.formatted(date: .long, time: .omitted) })
+        dayGoals = goals.filter({ $0.date.formatted(date: .long, time: .omitted) == date.formatted(date: .long, time: .omitted) })
     }
 }

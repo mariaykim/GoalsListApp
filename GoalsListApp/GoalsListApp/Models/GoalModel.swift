@@ -11,13 +11,13 @@ struct GoalModel: Identifiable, Hashable, Codable {
     let id: String
     let title: String
     let description: String
-    let date: String
+    let date: Date
     let isCompleted: Bool
     
     init(id: String = UUID().uuidString,
          title: String,
          description: String = "",
-         date: String = "",
+         date: Date,
          isCompleted: Bool = false
     ) {
         self.id = id
@@ -31,7 +31,7 @@ struct GoalModel: Identifiable, Hashable, Codable {
         return GoalModel(id: id, title: title, description: description, date: date, isCompleted: !isCompleted)
     }
     
-    func updatedGoal(title: String, description: String, date: String) -> GoalModel {
+    func updatedGoal(title: String, description: String, date: Date) -> GoalModel {
         return GoalModel(id: id, title: title, description: description, date: date, isCompleted: isCompleted)
     }
 }

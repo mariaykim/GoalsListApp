@@ -14,7 +14,7 @@ struct CreateGoalView: View {
     @EnvironmentObject var viewModel: GoalsListViewViewModel
     @State var titleTextFieldText: String = ""
     @State var descriptionTextFieldText: String = ""
-    @State var dateTextFieldText: String = ""
+    @State var goalDate: Date = Date()
     
     @State var alertTitle: String = ""
     @State var showAlert: Bool = false
@@ -36,12 +36,13 @@ struct CreateGoalView: View {
                     .clipShape(.rect(cornerRadius: 10))
                     .padding(.bottom, 15)
                 
-                TextField("Goal Date...", text: $dateTextFieldText)
-                    .padding(.horizontal)
-                    .frame(height: 55)
-                    .background(Color(UIColor.secondarySystemBackground))
-                    .clipShape(.rect(cornerRadius: 10))
-                    .padding(.bottom, 15)
+                DatePicker(
+                    "Goal Date",
+                    selection: $goalDate,
+                    in: Date()...,
+                    displayedComponents: [.date]
+                )
+                .padding(.bottom, 15)
                 
                 Button(action: saveGoal, label: {
                     Text("SAVE")
@@ -66,7 +67,7 @@ struct CreateGoalView: View {
             DispatchQueue.main.async {
                 scheduleTimeBasedNotification()
             }
-            viewModel.addGoal(title: titleTextFieldText, description: descriptionTextFieldText, date: dateTextFieldText)
+            viewModel.addGoal(title: titleTextFieldText, description: descriptionTextFieldText, date: goalDate)
             alertTitle = "SUCCESS"
             showAlert.toggle()
             dismiss()

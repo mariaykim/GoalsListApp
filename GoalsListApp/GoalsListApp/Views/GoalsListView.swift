@@ -29,13 +29,6 @@ struct GoalsListView: View {
             }
         }
         .navigationTitle("Goals")
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                NavigationLink(destination: CreateGoalView(), label: {
-                    Image(systemName: "gear")
-                })
-            }
-        }
         .toolbar(.visible, for: .navigationBar)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

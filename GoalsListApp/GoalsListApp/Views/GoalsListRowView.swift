@@ -31,6 +31,6 @@ struct GoalsListRowView: View {
 }
 
 #Preview {
-    let item1 = GoalModel(title: "preview1", description: "describe this", date: "sometime 2025", isCompleted: true)
+    let item1 = GoalModel(title: "preview1", description: "describe this", date: Date.now, isCompleted: true)
     return GoalsListRowView(goal: item1)
 }

@@ -14,7 +14,7 @@ struct GoalDetailsView: View {
     
     @State var titleTextFieldText: String = ""
     @State var descriptionTextFieldText: String = ""
-    @State var dateTextFieldText: String = ""
+    @State var goalDate: Date = Date()
     
     @State var alertTitle: String = ""
     @State var showAlert: Bool = false
@@ -40,13 +40,13 @@ struct GoalDetailsView: View {
                     .clipShape(.rect(cornerRadius: 10))
                     .padding(.bottom, 15)
                 
-                Text("Goal Date:")
-                TextField(goal.date, text: $dateTextFieldText)
-                    .padding(.horizontal)
-                    .frame(height: 55)
-                    .background(Color(UIColor.secondarySystemBackground))
-                    .clipShape(.rect(cornerRadius: 10))
-                    .padding(.bottom, 15)
+                DatePicker(
+                    "Goal Date:",
+                    selection: $goalDate,
+                    in: Date()...,
+                    displayedComponents: [.date]
+                )
+                .padding(.bottom, 15)
                 
                 Button(action: updateGoal, label: {
                     Text("UPDATE")
@@ -66,14 +66,14 @@ struct GoalDetailsView: View {
             .onAppear {
                 titleTextFieldText = goal.title
                 descriptionTextFieldText = goal.description
-                dateTextFieldText = goal.date
+                goalDate = goal.date
             }
         }
     }
     
     func updateGoal() {
         if goalValid() {
-            viewModel.updateGoal(goal: goal.updatedGoal(title: titleTextFieldText, description: descriptionTextFieldText, date: dateTextFieldText))
+            viewModel.updateGoal(goal: goal.updatedGoal(title: titleTextFieldText, description: descriptionTextFieldText, date: goalDate))
             alertTitle = "SUCCESS"
             showAlert.toggle()
             dismiss()
@@ -92,5 +92,5 @@ struct GoalDetailsView: View {
 }
 
 #Preview {
-    GoalDetailsView(goal: GoalModel(title: "TITLE", description: "DESC", date: "DATE", isCompleted: false))
+    GoalDetailsView(goal: GoalModel(title: "TITLE", description: "DESC", date: Date.now, isCompleted: false))
 }
