@@ -11,11 +11,10 @@ struct GoalsCalendarSelectedDayView: View {
     
     @EnvironmentObject var viewModel: GoalsListViewViewModel
     let selectedDate: Date?
-//    let dayGoals: [GoalModel] = [.init(title: "testing1"), .init(title: "testing2"), .init(title: "testing3")]
     
     var body: some View {
         VStack(spacing: 5) {
-            Text(selectedDate?.description ?? "Select a date")
+            Text(selectedDate?.formatted(date: .long, time: .omitted) ?? "Select a date")
                 .font(.title)
             ScrollView {
                 ForEach(viewModel.dayGoals, id: \.self) { goal in

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct CreateGoalView: View {
     
@@ -20,38 +21,43 @@ struct CreateGoalView: View {
     
     var body: some View {
         ScrollView {
-            TextField("Goal Title...", text: $titleTextFieldText)
-                .padding(.horizontal)
-                .frame(height: 55)
-                .background(Color(UIColor.secondarySystemBackground))
+            VStack {
+                TextField("Goal Title...", text: $titleTextFieldText)
+                    .padding(.horizontal)
+                    .frame(height: 55)
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .clipShape(.rect(cornerRadius: 10))
+                    .padding(.bottom, 15)
+                
+                TextField("Goal Description...", text: $descriptionTextFieldText)
+                    .padding(.horizontal)
+                    .frame(height: 55)
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .clipShape(.rect(cornerRadius: 10))
+                    .padding(.bottom, 15)
+                
+                TextField("Goal Date...", text: $dateTextFieldText)
+                    .padding(.horizontal)
+                    .frame(height: 55)
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .clipShape(.rect(cornerRadius: 10))
+                    .padding(.bottom, 15)
+                
+                Button(action: saveGoal, label: {
+                    Text("SAVE")
+                        .foregroundStyle(Color.white)
+                        .padding(.all)
+                        .frame(maxWidth: .infinity)
+                })
+                .background(Color.blue)
                 .clipShape(.rect(cornerRadius: 10))
-            
-            TextField("Goal Description...", text: $descriptionTextFieldText)
-                .padding(.horizontal)
-                .frame(height: 55)
-                .background(Color(UIColor.secondarySystemBackground))
-                .clipShape(.rect(cornerRadius: 10))
-            
-            TextField("Goal Date...", text: $dateTextFieldText)
-                .padding(.horizontal)
-                .frame(height: 55)
-                .background(Color(UIColor.secondarySystemBackground))
-                .clipShape(.rect(cornerRadius: 10))
-            
-            Button(action: saveGoal, label: {
-                Text("SAVE")
-                    .foregroundStyle(Color.white)
-                    .padding(.all)
-                    .frame(maxWidth: .infinity)
-            })
-            .background(Color.blue)
-            .clipShape(.rect(cornerRadius: 10))
-            
-        }
-        .padding(.horizontal)
-        .navigationTitle("Create new goal")
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text(alertTitle))
+                
+            }
+            .padding(.horizontal)
+            .navigationTitle("Create new goal")
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text(alertTitle))
+            }
         }
     }
     

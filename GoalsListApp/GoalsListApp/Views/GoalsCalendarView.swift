@@ -11,7 +11,6 @@ import SwiftUI
 struct GoalsCalendarView: View {
     
     @State var selectedDate: Date?
-
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -19,7 +18,7 @@ struct GoalsCalendarView: View {
             GoalsCalendarSelectedDayView(selectedDate: selectedDate)
                 .frame(height: UIScreen.main.bounds.height * 0.25)
                 .frame(maxWidth: .infinity)
-                .background(Color.green)
+                .background(Color.blue)
         }
         .padding(.bottom, 1) // TODO: fix
     }

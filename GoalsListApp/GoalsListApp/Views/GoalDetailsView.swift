@@ -23,43 +23,51 @@ struct GoalDetailsView: View {
     
     var body: some View {
         ScrollView {
-            TextField(goal.title, text: $titleTextFieldText)
-                .padding(.horizontal)
-                .frame(height: 55)
-                .background(Color(UIColor.secondarySystemBackground))
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Goal Title:")
+                TextField(goal.title, text: $titleTextFieldText)
+                    .padding(.horizontal)
+                    .frame(height: 55)
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .clipShape(.rect(cornerRadius: 10))
+                    .padding(.bottom, 15)
+                
+                Text("Goal Description:")
+                TextField(goal.description, text: $descriptionTextFieldText)
+                    .padding(.horizontal)
+                    .frame(height: 55)
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .clipShape(.rect(cornerRadius: 10))
+                    .padding(.bottom, 15)
+                
+                Text("Goal Date:")
+                TextField(goal.date, text: $dateTextFieldText)
+                    .padding(.horizontal)
+                    .frame(height: 55)
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .clipShape(.rect(cornerRadius: 10))
+                    .padding(.bottom, 15)
+                
+                Button(action: updateGoal, label: {
+                    Text("UPDATE")
+                        .foregroundStyle(Color.white)
+                        .padding(.all)
+                        .frame(maxWidth: .infinity)
+                })
+                .background(Color.blue)
                 .clipShape(.rect(cornerRadius: 10))
-            
-            TextField(goal.description, text: $descriptionTextFieldText)
-                .padding(.horizontal)
-                .frame(height: 55)
-                .background(Color(UIColor.secondarySystemBackground))
-                .clipShape(.rect(cornerRadius: 10))
-            
-            TextField(goal.date, text: $dateTextFieldText)
-                .padding(.horizontal)
-                .frame(height: 55)
-                .background(Color(UIColor.secondarySystemBackground))
-                .clipShape(.rect(cornerRadius: 10))
-            
-            Button(action: updateGoal, label: {
-                Text("UPDATE")
-                    .foregroundStyle(Color.white)
-                    .padding(.all)
-                    .frame(maxWidth: .infinity)
-            })
-            .background(Color.blue)
-            .clipShape(.rect(cornerRadius: 10))
-            
-        }
-        .padding(.horizontal)
-        .navigationTitle(goal.title)
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text(alertTitle))
-        }
-        .onAppear {
-            titleTextFieldText = goal.title
-            descriptionTextFieldText = goal.description
-            dateTextFieldText = goal.date
+                
+            }
+            .padding(.horizontal)
+            .navigationTitle(goal.title)
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text(alertTitle))
+            }
+            .onAppear {
+                titleTextFieldText = goal.title
+                descriptionTextFieldText = goal.description
+                dateTextFieldText = goal.date
+            }
         }
     }
     

@@ -63,6 +63,6 @@ final class GoalsListViewViewModel: ObservableObject {
     
     func fetchDayGoals(date: Date?) {
         guard let date else { return }
-        dayGoals = goals.filter({ $0.date == date.description })
+        dayGoals = goals.filter({ $0.date == date.formatted(date: .long, time: .omitted) })
     }
 }
