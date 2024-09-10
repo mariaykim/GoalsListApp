@@ -18,13 +18,6 @@ struct GoalsCalendarView: View {
         ZStack(alignment: .bottom) {
             calendarView
                 .padding(.horizontal, 20)
-        }
-        .onAppear {
-            if selectedDate != nil {
-                viewModel.fetchDayGoals(date: selectedDate)
-            }
-        }
-        .overlay(alignment: .bottom) {
             GoalsCalendarSelectedDayView(selectedDate: selectedDate)
                 .frame(height: UIScreen.main.bounds.height * 0.25)
                 .frame(maxWidth: .infinity)
