@@ -18,7 +18,7 @@ struct GoalsCalendarSelectedDayView: View {
                 .font(.title)
             ScrollView {
                 ForEach(viewModel.dayGoals, id: \.self) { goal in
-                    NavigationLink(destination: CreateGoalView(), label: {
+                    NavigationLink(destination: GoalDetailsView(goal: goal), label: {
                         GoalsCalendarSelectedDayRowView(title: goal.title)
                     })
                 }

@@ -31,7 +31,7 @@ struct GoalsListAppApp: App {
                     }
                 }
                 .toolbarBackground(.visible, for: .tabBar)
-                .toolbarBackground(Color.secondaryAccent, for: .tabBar)
+                .toolbarBackground(Color.cyan, for: .tabBar)
             }
             .environmentObject(goalsListViewModel)
             .padding(.horizontal, 20)
