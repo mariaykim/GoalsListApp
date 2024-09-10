@@ -18,9 +18,10 @@ struct GoalsListAppApp: App {
                 Group {
                     NavigationView {
                         GoalsListView()
+                            .padding(.horizontal, 20)
                     }
                     .tabItem {
-                        Label("Home", systemImage: "house")
+                        Label("List", systemImage: "list.bullet.rectangle")
                     }
                     
                     NavigationView {
@@ -31,10 +32,8 @@ struct GoalsListAppApp: App {
                     }
                 }
                 .toolbarBackground(.visible, for: .tabBar)
-                .toolbarBackground(Color.cyan, for: .tabBar)
             }
             .environmentObject(goalsListViewModel)
-            .padding(.horizontal, 20)
         }
     }
 }

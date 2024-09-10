@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct GoalsCalendarSelectedDayRowView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
     let title: String
     
     var body: some View {
         HStack(spacing: 0) {
             Rectangle()
-                .background(Color.pink)
+                .fill(colorScheme == .dark ? .white : .black)
                 .frame(maxWidth: 15)
                 .padding(.trailing, 10)
             Text(title)
+                .foregroundStyle(colorScheme == .dark ? .white : .black)
             Spacer()
         }
         .padding(.all, 10)

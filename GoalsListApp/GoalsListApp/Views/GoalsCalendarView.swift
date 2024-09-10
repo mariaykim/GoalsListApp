@@ -7,27 +7,39 @@
 
 import HorizonCalendar
 import SwiftUI
+import UIKit
 
 struct GoalsCalendarView: View {
     
+    @EnvironmentObject var viewModel: GoalsListViewViewModel
     @State var selectedDate: Date?
     
     var body: some View {
         ZStack(alignment: .bottom) {
             calendarView
+                .padding(.horizontal, 20)
+        }
+        .onAppear {
+            if selectedDate != nil {
+                viewModel.fetchDayGoals(date: selectedDate)
+            }
+        }
+        .overlay(alignment: .bottom) {
             GoalsCalendarSelectedDayView(selectedDate: selectedDate)
                 .frame(height: UIScreen.main.bounds.height * 0.25)
                 .frame(maxWidth: .infinity)
                 .background(Color.blue)
+                .padding(.bottom, 1) // TODO: fix
         }
-        .padding(.bottom, 1) // TODO: fix
     }
     
     var calendarView: some View {
         let calendar = Calendar.current
         
-        let startDate = calendar.date(from: DateComponents(year: 2024, month: 09, day: 01))!
-        let endDate = calendar.date(from: DateComponents(year: 2025, month: 12, day: 31))!
+        let comp: DateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        
+        let startDate = calendar.date(from: DateComponents(year: comp.year, month: comp.month, day: 01))!
+        let endDate = calendar.date(from: DateComponents(year: comp.year, month: 12, day: 31))!
         
         return CalendarViewRepresentable(
             calendar: calendar,
@@ -54,6 +66,7 @@ struct GoalsCalendarView: View {
         .verticalDayMargin(8)
         .horizontalDayMargin(8)
     }
+    
 }
 
 #Preview {
