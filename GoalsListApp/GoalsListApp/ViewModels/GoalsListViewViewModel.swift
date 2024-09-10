@@ -14,6 +14,8 @@ final class GoalsListViewViewModel: ObservableObject {
             saveGoals()
         }
     }
+    @Published var dayGoals: [GoalModel] = []
+    
     let goalsListKey: String = "goals_list"
     
     init() {
@@ -57,5 +59,10 @@ final class GoalsListViewViewModel: ObservableObject {
         if let encodedData = try? JSONEncoder().encode(goals) {
             UserDefaults.standard.set(encodedData, forKey: goalsListKey)
         }
+    }
+    
+    func fetchDayGoals(date: Date?) {
+        guard let date else { return }
+        dayGoals = goals.filter({ $0.date == date.description })
     }
 }

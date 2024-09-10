@@ -20,6 +20,8 @@
 		3A0BC21A2C8F720D00BC2B4A /* GoalDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2192C8F720D00BC2B4A /* GoalDetailsView.swift */; };
 		3A0BC21C2C8F78CD00BC2B4A /* GoalsCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC21B2C8F78CD00BC2B4A /* GoalsCalendarView.swift */; };
 		3A0BC21F2C8F79DF00BC2B4A /* HorizonCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 3A0BC21E2C8F79DF00BC2B4A /* HorizonCalendar */; };
+		3A0BC2212C8FF7D300BC2B4A /* GoalsCalendarSelectedDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2202C8FF7D300BC2B4A /* GoalsCalendarSelectedDayView.swift */; };
+		3A0BC2232C8FF7E200BC2B4A /* GoalsCalendarSelectedDayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0BC2222C8FF7E200BC2B4A /* GoalsCalendarSelectedDayRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		3A0BC2172C87C6D500BC2B4A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A0BC2192C8F720D00BC2B4A /* GoalDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailsView.swift; sourceTree = "<group>"; };
 		3A0BC21B2C8F78CD00BC2B4A /* GoalsCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCalendarView.swift; sourceTree = "<group>"; };
+		3A0BC2202C8FF7D300BC2B4A /* GoalsCalendarSelectedDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCalendarSelectedDayView.swift; sourceTree = "<group>"; };
+		3A0BC2222C8FF7E200BC2B4A /* GoalsCalendarSelectedDayRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCalendarSelectedDayRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 				3A0BC2092C86436400BC2B4A /* GoalsListRowView.swift */,
 				3A0BC2192C8F720D00BC2B4A /* GoalDetailsView.swift */,
 				3A0BC21B2C8F78CD00BC2B4A /* GoalsCalendarView.swift */,
+				3A0BC2202C8FF7D300BC2B4A /* GoalsCalendarSelectedDayView.swift */,
+				3A0BC2222C8FF7E200BC2B4A /* GoalsCalendarSelectedDayRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,7 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A0BC2142C8798F700BC2B4A /* GoalsListViewViewModel.swift in Sources */,
+				3A0BC2212C8FF7D300BC2B4A /* GoalsCalendarSelectedDayView.swift in Sources */,
 				3A0BC2082C86434D00BC2B4A /* GoalsListView.swift in Sources */,
+				3A0BC2232C8FF7E200BC2B4A /* GoalsCalendarSelectedDayRowView.swift in Sources */,
 				3A0BC20E2C87956B00BC2B4A /* CreateGoalView.swift in Sources */,
 				3A0BC2162C87AEE500BC2B4A /* NoGoalsView.swift in Sources */,
 				3A0BC21A2C8F720D00BC2B4A /* GoalDetailsView.swift in Sources */,

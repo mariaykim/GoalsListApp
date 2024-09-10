@@ -23,10 +23,12 @@ struct GoalsListAppApp: App {
                         Label("Home", systemImage: "house")
                     }
                     
-                    GoalsCalendarView()
-                        .tabItem {
-                            Label("Calendar", systemImage: "calendar")
-                        }
+                    NavigationView {
+                        GoalsCalendarView()
+                    }
+                    .tabItem {
+                        Label("Calendar", systemImage: "calendar")
+                    }
                 }
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarBackground(Color.secondaryAccent, for: .tabBar)
